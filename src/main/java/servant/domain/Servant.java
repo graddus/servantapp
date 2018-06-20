@@ -10,22 +10,25 @@ public class Servant {
 	private int defensestat;
 	private String attribute;
 	private String description;
+	private String appearance;
 	private String biography;
 	private int height;
 	private int weight;
 	private String region;
-	public Servant(int id, String name, String title, String gender, String servantclass, int attackstat, int defensestat, String attribute,
-			String description, String biography, int height, int weight, String region) {
+	public Servant(int id, String name, String title, String gender, String servantclass, int attackstat,
+			int defensestat, String attribute, String description, String appearance, String biography, int height,
+			int weight, String region) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.title = title;
 		this.gender = gender;
-		this.servantclass=servantclass;
+		this.servantclass = servantclass;
 		this.attackstat = attackstat;
 		this.defensestat = defensestat;
 		this.attribute = attribute;
 		this.description = description;
+		this.appearance = appearance;
 		this.biography = biography;
 		this.height = height;
 		this.weight = weight;
@@ -55,11 +58,11 @@ public class Servant {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getServantClass(){
-		return this.servantclass;
+	public String getServantclass() {
+		return servantclass;
 	}
-	public void setServantClass(String servantclass){
-		this.servantclass=servantclass;
+	public void setServantclass(String servantclass) {
+		this.servantclass = servantclass;
 	}
 	public int getAttackstat() {
 		return attackstat;
@@ -85,6 +88,12 @@ public class Servant {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getAppearance() {
+		return appearance;
+	}
+	public void setAppearance(String appearance) {
+		this.appearance = appearance;
+	}
 	public String getBiography() {
 		return biography;
 	}
@@ -109,5 +118,4 @@ public class Servant {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-
 }
