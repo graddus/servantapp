@@ -8,6 +8,5 @@ import servant.domain.ServantClass;
 public interface ServantDao{
 		ArrayList<Servant> getAllServants();
 		Servant getServantByID(int i);
-		ArrayList<ServantClass> getAllClasses();
-		ServantClass getClassById(int i);
+		ArrayList<Servant> getServantByClass(String servantclass);
 }
