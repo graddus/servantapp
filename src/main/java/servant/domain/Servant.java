@@ -5,6 +5,7 @@ public class Servant {
 	private String name;
 	private String title;
 	private String gender;
+	private String servantclass;
 	private int attackstat;
 	private int defensestat;
 	private String attribute;
@@ -13,13 +14,14 @@ public class Servant {
 	private int height;
 	private int weight;
 	private String region;
-	public Servant(int id, String name, String title, String gender, int attackstat, int defensestat, String attribute,
+	public Servant(int id, String name, String title, String gender, String servantclass, int attackstat, int defensestat, String attribute,
 			String description, String biography, int height, int weight, String region) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.title = title;
 		this.gender = gender;
+		this.servantclass=servantclass;
 		this.attackstat = attackstat;
 		this.defensestat = defensestat;
 		this.attribute = attribute;
@@ -52,6 +54,12 @@ public class Servant {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public String getServantClass(){
+		return this.servantclass;
+	}
+	public void setServantClass(String servantclass){
+		this.servantclass=servantclass;
 	}
 	public int getAttackstat() {
 		return attackstat;
