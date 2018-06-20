@@ -63,8 +63,11 @@ public class ServantRestService {
 			job.add("name", s.getName());
 			job.add("title", s.getTitle());
 			job.add("gender", s.getGender());
+			job.add("servantclass", s.getServantclass());
 			job.add("region", s.getRegion());
+			job.add("shortdesc", s.getShortdesc());
 			job.add("description", s.getDescription());
+			job.add("appearance", s.getAppearance());
 			job.add("biography", s.getBiography());
 			job.add("attribute", s.getAttribute());
 			job.add("height", s.getHeight()+"cm");

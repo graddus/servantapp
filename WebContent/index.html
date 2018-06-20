@@ -36,7 +36,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <a href="#" id=button1 class="w3-bar-item w3-black w3-button">1</a>
       <a href="#" id=button2 class="w3-bar-item w3-button w3-hover-black">2</a>
       <a href="#" id=button3 class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" id=button4 class="w3-bar-item w3-button w3-hover-black">4</a>
       <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
     </div>
   </div>
@@ -67,14 +66,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <h3>BLOG POSTS</h3>
       <ul class="w3-ul w3-hoverable">
         <li class="w3-padding-16">
-          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <img src="imgs/blog1.jpg" class="w3-left w3-margin-right" style="width:50px">
           <span class="w3-large">Top 10 Most Powerful Servants</span><br>
-          <span>Sed mattis nunc</span>
+          <span>A look at the most powerful Servants.</span>
         </li>
         <li class="w3-padding-16">
-          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Fate/Heaven's Feel Movie 1 Review</span><br>
-          <span>Praes tinci sed</span>
+          <img src="imgs/blog2.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Jeanne d'Arc Alter Nendoroid Review</span><br>
+          <span>A review of the latest addition to the Fate Nendoroids</span>
         </li> 
       </ul>
     </div>
@@ -101,7 +100,7 @@ function loadservants(batch,row){
 			$("#servants"+row).append("<div class=w3-quarter>" +
 					"<a href="+servant.id+".html><img src=imgs/"+servant.id+".png alt=Sandwich style=width:100%></a>" +
 					" <h3>"+servant.name+"</h3>" +
-					" <p>"+servant.description+"</p></div>"
+					" <p>"+servant.shortdesc+"</p></div>"
 );
 		});
 
@@ -128,12 +127,6 @@ $( "#button3" ).click(function() {
 	 $("#servants2").empty();
 	  loadservants(16,1);
 	  loadservants(20,2);
-	});
-$( "#button4" ).click(function() {
-	 $("#servants1").empty();
-	 $("#servants2").empty();
-	  loadservants(24,1);
-	  loadservants(28,2);
 	});
 </script>
 </body>

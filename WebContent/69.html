@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<title>Oda Nobunaga</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +11,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 <body class="w3-light-grey">
 <!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-center w3-padding-16"><a href=index.html>Servants</a></div>
+<div class="w3-top w3-light-gray">
+  <div class="w3-light-gray w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-center w3-padding-16"><a href=index.html>Back to Servants Overview</a></div>
   </div>
 </div>
 <br>
@@ -31,27 +30,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="imgs/69.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2 style="color:grey">Oda Nobunaga</h2>
-          </div>
         </div>
-        <div class="w3-container">
-          <p><i class="fas fa-user" style="font-size:24px"></i>&emsp; Devil King of the Sixth Heaven</p>
-          <p><i class="fa fa-home" style="font-size:24px"></i>&emsp;Japan</p>
-          <p><i class="fas fa-male" style="font-size:24px"></i>&emsp;&emsp;Female</p>
-          <p><i class="fas fa-user-md" style="font-size:24px"></i>&emsp; Archer</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fas fa-shield-alt" style="font-size:24px"></i></i>&emsp;Stats</b></p>
-          Attack: &emsp;9494<br>
-          Defense:&nbsp;    11637
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-heartbeat" style="font-size:24px"></i>&emsp;Medical Info</b></p>
-          <p><i class="fas fa-arrows-alt-v" style="font-size:24px"></i>&emsp;&emsp;152cm</p>
-          <p><i class="fas fa-weight" style="font-size:24px"></i>&emsp; 43 kgs</p>
-          <br>
+        <div id="about" class="w3-container">
         </div>
       </div><br>
 
@@ -59,32 +39,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-user w3-margin-right w3-xxlarge w3-text-teal"></i>About Oda Nobunaga</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Identity</b></h5>
-          <p>Demon Archer's True Name is Nobunaga Oda (織田信長, Oda Nobunaga?), the legendary warlord of the Sengoku and Azuchi-Momoyama Periods of Japan, and older sister of Oda Nobukatsu. Her moniker "Devil King of the Sixth Heaven" (第六天魔王, Dairokutenmaō?) was based on the severe acts of destruction carried out during her campaign.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Appearance</b></h5>
-          <p>Her clothing that looks like a military uniform is something she prepared herself out of hobby upon being summoned as a Servant.</p>
-          <hr>
-        </div>
-      </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Biography</h2>
-        <div class="w3-container">
-          <p>The soldier of fortune from the Warring States Period, she was called the "Big Fool of Owari" (尾張の大うつけ, Owari no Ōutsuke?) in her childhood. She made a name for herself in the world upon defeating Imagawa Yoshimoto in the Battle of Okehazama. Responsible for the de facto downfall of the Muromachi Shogunate, Nobunaga had great influence during the closure of a the long, turbulent war period lasting since the Ōnin War.
-
-One of the first to assimilate western inventions and tactical concepts into the art of war, she wielded both a technological and economic advantage against her foes, with efforts focused on the control and development important hubs of industry and a the establishment of policies emphasizing the promotion of results and individual merit. Her Noble Phantasm is based upon the rotating volley tactics employed by her troops, and its anti-army nature is drawn from her skilled leadership.
-
-Between 1560 and 1583, she eliminated many formidable enemies one after the other and even had the unification of the country within reach. Her campaign ended in Kyoto, at the temple of Honnō-ji, thanks to the insurrection of Akechi Mitsuhide.The one who succeeded her was her former vassal, Toyotomi Hideyoshi.</p>
-        </div>
-      </div>
+    <div id=detail class="w3-twothird">
 
     <!-- End Right Column -->
     </div>
@@ -99,7 +54,43 @@ Between 1560 and 1583, she eliminated many formidable enemies one after the othe
 <p>Edited by Lucca Huijgens</p>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
+function loadservant(){
+	    	$.getJSON("/servant/restservices/servants/69", function(servant){
+			 	document.title=servant.name;
+			 	$(".w3-display-container").append(
+			 			"<img src=imgs/"+servant.id+".png style=width:100% alt=Avatar>"+
+			 	          "<div class=\"w3-display-bottomleft w3-container w3-text-black\" style=color:black;>"+
+			 	            "<h2><span style=background-color:rgba(255,255,255,0.5);>"+servant.name+"</span></h2></div>"		
+			 	);
+			 	$("#about").append(
+			 	 "<p><i class=\"fas fa-user\" style=font-size:24px></i>&emsp; "+servant.title+"</p>"+
+		          "<p><i class=\"fa fa-home\" style=font-size:24px></i>&emsp;"+servant.region+"</p>"+
+		          "<p><i class=\"fas fa-male\" style=font-size:24px></i>&emsp;&emsp;"+servant.gender+"</p>"+
+		          "<p><i class=\"fas fa-user-md\" style=font-size:24px></i>&emsp; "+servant.servantclass+"</p><hr>"+
+		          "<p class=w3-large><b><i class=\"fas fa-shield-alt\" style=font-size:24px></i></i>&emsp;Stats</b></p>"+
+		          "Attack: &emsp;"+servant.attack+"<br>"+
+		          "Defense:&nbsp;    "+servant.defense+"<br>"+
+		          "<p class=w3-large w3-text-theme><b><i class=\"fa fa-heartbeat\" style=font-size:24px></i>&emsp;Medical Info</b></p>"+
+		          "<p><i class=\"fas fa-arrows-alt-v\" style=font-size:24px></i>&emsp;&emsp;"+servant.height+"</p>"+
+		          "<p><i class=\"fas fa-weight\" style=font-size:24px></i>&emsp; "+servant.weight+"</p><br>");
+			 	
+			 	$("#detail").append(
+			 			"<div id=idapcontainer class=\"w3-container w3-card w3-white w3-margin-bottom\">"+
+			 	        "<div class=w3-container>"+
+			 	    "<h2 class=w3-text-grey w3-padding-16><i class=\"fas fa-user w3-margin-right w3-xxlarge w3-text-teal\"></i>About "+servant.name+"</h2>"+
+			 	   "<div class=w3-container><h5 id=identity class=w3-opacity><b>Identity</b></h5>"+
+			 	   "<p>"+servant.description+"</p><hr></div>"+
+			 	  "<div class=w3-container><h5 id=appearance class=w3-opacity><b>Appearance</b></h5>"+
+			 	   "<p>"+servant.appearance+"</p><hr></div></div></div>"+
+	    		      "<div id =biography class=\"w3-container w3-card w3-white\">"+
+	    			 "<h2 class=\"w3-text-grey w3-padding-16\"><i class=\"fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal\"></i>Biography</h2>"+
+	    		        "<div id=biography class=w3-container>"+
+	    		        "<p>"+servant.biography+"</p></div></div></div>");
+			});
+	    }
+loadservant();
 </script>
 </body>
 </html>

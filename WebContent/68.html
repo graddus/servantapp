@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<title>Okita Souji</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +11,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 <body class="w3-light-grey">
 <!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-center w3-padding-16"><a href=index.html>Servants</a></div>
+<div class="w3-top w3-light-gray">
+  <div class="w3-light-gray w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-center w3-padding-16"><a href=index.html>Back to Servants Overview</a></div>
   </div>
 </div>
 <br>
@@ -31,27 +30,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="imgs/68.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2 style="color:black">Okita Souji</h2>
-          </div>
         </div>
-        <div class="w3-container">
-          <p><i class="fas fa-user" style="font-size:24px"></i>&emsp; Sakura Saber</p>
-          <p><i class="fa fa-home" style="font-size:24px"></i>&emsp;Japan</p>
-          <p><i class="fas fa-male" style="font-size:24px"></i>&emsp;&emsp;Female</p>
-          <p><i class="fas fa-user-md" style="font-size:24px"></i>&emsp; Saber</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fas fa-shield-alt" style="font-size:24px"></i></i>&emsp;Stats</b></p>
-          Attack: &emsp;12068<br>
-          Defense:&nbsp;    13225
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-heartbeat" style="font-size:24px"></i>&emsp;Medical Info</b></p>
-          <p><i class="fas fa-arrows-alt-v" style="font-size:24px"></i>&emsp;&emsp;158cm</p>
-          <p><i class="fas fa-weight" style="font-size:24px"></i>&emsp; 45 kgs</p>
-          <br>
+        <div id="about" class="w3-container">
         </div>
       </div><br>
 
@@ -59,28 +39,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-user w3-margin-right w3-xxlarge w3-text-teal"></i>About Okita Souji</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Identity</b></h5>
-          <p>Sakura Saber's True Name is Okita Souji (沖田総司, Okita Sōji?), the captain of the first unit of the Shinsengumi, a public order organization that was mostly active in the Kyoto of the Edo period's closing days. Even among the Shinsengumi, which was feared as a band of master swordsmen, the one admired as the strongest genius swordsman was Okita.</p></div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Appearance</b></h5>
-          <p>Okita Souji is a female in history and she looks similar to King Arthur. A lovely girl in her mid-teens, who wraps her body in fashionable Japanese clothing. In order to conceal her original costume, which is simply too conspicuous, Okita normally uses this outfit, wearing a Taisho-style Kimono that consists of a Hakama and long leather boots.</p></div>
-          </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Biography</h2>
-        <div class="w3-container">
-          <p>During her childhood, while she was still an apprentice at the Shieikan, the dojo of the Tennen Rishin-ryuu in Edo's Ichigaya area, Okita Souji met Hijikata Toshizo and Kondo Isami, core figures of the Shinsengumi in the future. She was skillful enough to serve as the head coach of the Shieikan at a young age, and there was no person who was superior to her regarding the talent with the sword.
-
-Kondo formed the Roshigumi on behalf of being bodyguards for the Shogun in the third year of the Bunkyuu era, and Okita went to the Imperial Capital to participate in the group together with Hijikata. After the break up of the Roshigumi, Kondo formed the Shinsengumi together with Hijikata, and Okita was entrusted with the position of captain of the first unit.
-
-Demonstrating their sword abilities in many conflicts like the Ikedaya Incident and so forth, the name of the Shinsengumi roared throughout Kyoto of the Bakumatsu era. However, Okita's body was adversely affected by an illness around that time, and her physical condition gradually deteroriated. Before long, she withdrew from the frontlines for medical treatment.
-
-Afterwards, Okita continued her life of recuperation while separated from her comrades, but in the fourth year of the Keio era, she died at the place where she was medically treated in Edo's Sendagaya area. It is said that she died without knowing of Kondo's death, who was decapitated two months prior to her death.</p></div>
+    <div id=detail class="w3-twothird">
 
     <!-- End Right Column -->
     </div>
@@ -95,7 +54,43 @@ Afterwards, Okita continued her life of recuperation while separated from her co
 <p>Edited by Lucca Huijgens</p>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
+function loadservant(){
+	    	$.getJSON("/servant/restservices/servants/68", function(servant){
+			 	document.title=servant.name;
+			 	$(".w3-display-container").append(
+			 			"<img src=imgs/"+servant.id+".png style=width:100% alt=Avatar>"+
+			 	          "<div class=\"w3-display-bottomleft w3-container w3-text-black\" style=color:black;>"+
+			 	            "<h2><span style=background-color:rgba(255,255,255,0.5);>"+servant.name+"</span></h2></div>"		
+			 	);
+			 	$("#about").append(
+			 	 "<p><i class=\"fas fa-user\" style=font-size:24px></i>&emsp; "+servant.title+"</p>"+
+		          "<p><i class=\"fa fa-home\" style=font-size:24px></i>&emsp;"+servant.region+"</p>"+
+		          "<p><i class=\"fas fa-male\" style=font-size:24px></i>&emsp;&emsp;"+servant.gender+"</p>"+
+		          "<p><i class=\"fas fa-user-md\" style=font-size:24px></i>&emsp; "+servant.servantclass+"</p><hr>"+
+		          "<p class=w3-large><b><i class=\"fas fa-shield-alt\" style=font-size:24px></i></i>&emsp;Stats</b></p>"+
+		          "Attack: &emsp;"+servant.attack+"<br>"+
+		          "Defense:&nbsp;    "+servant.defense+"<br>"+
+		          "<p class=w3-large w3-text-theme><b><i class=\"fa fa-heartbeat\" style=font-size:24px></i>&emsp;Medical Info</b></p>"+
+		          "<p><i class=\"fas fa-arrows-alt-v\" style=font-size:24px></i>&emsp;&emsp;"+servant.height+"</p>"+
+		          "<p><i class=\"fas fa-weight\" style=font-size:24px></i>&emsp; "+servant.weight+"</p><br>");
+			 	
+			 	$("#detail").append(
+			 			"<div id=idapcontainer class=\"w3-container w3-card w3-white w3-margin-bottom\">"+
+			 	        "<div class=w3-container>"+
+			 	    "<h2 class=w3-text-grey w3-padding-16><i class=\"fas fa-user w3-margin-right w3-xxlarge w3-text-teal\"></i>About "+servant.name+"</h2>"+
+			 	   "<div class=w3-container><h5 id=identity class=w3-opacity><b>Identity</b></h5>"+
+			 	   "<p>"+servant.description+"</p><hr></div>"+
+			 	  "<div class=w3-container><h5 id=appearance class=w3-opacity><b>Appearance</b></h5>"+
+			 	   "<p>"+servant.appearance+"</p><hr></div></div></div>"+
+	    		      "<div id =biography class=\"w3-container w3-card w3-white\">"+
+	    			 "<h2 class=\"w3-text-grey w3-padding-16\"><i class=\"fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal\"></i>Biography</h2>"+
+	    		        "<div id=biography class=w3-container>"+
+	    		        "<p>"+servant.biography+"</p></div></div></div>");
+			});
+	    }
+loadservant();
 </script>
 </body>
 </html>

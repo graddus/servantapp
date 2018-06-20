@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<title>Astolfo</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +11,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 <body class="w3-light-grey">
 <!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-center w3-padding-16"><a href=index.html>Servants</a></div>
+<div class="w3-top w3-light-gray">
+  <div class="w3-light-gray w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-center w3-padding-16"><a href=index.html>Back to Servants Overview</a></div>
   </div>
 </div>
 <br>
@@ -31,27 +30,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="imgs/94.png" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2 style="color:red">Astolfo</h2>
-          </div>
         </div>
-        <div class="w3-container">
-          <p><i class="fas fa-user" style="font-size:24px"></i>&emsp; One of the Twelve Paladins of Charlemagne</p>
-          <p><i class="fa fa-home" style="font-size:24px"></i>&emsp;France</p>
-          <p><i class="fas fa-male" style="font-size:24px"></i>&emsp;&emsp;Male</p>
-          <p><i class="fas fa-user-md" style="font-size:24px"></i>&emsp; Rider</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fas fa-shield-alt" style="font-size:24px"></i></i>&emsp;Stats</b></p>
-          Attack: &emsp;8937<br>
-          Defense:&nbsp;    11172
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-heartbeat" style="font-size:24px"></i>&emsp;Medical Info</b></p>
-          <p><i class="fas fa-arrows-alt-v" style="font-size:24px"></i>&emsp;&emsp;164cm</p>
-          <p><i class="fas fa-weight" style="font-size:24px"></i>&emsp; 56 kgs</p>
-          <br>
+        <div id="about" class="w3-container">
         </div>
       </div><br>
 
@@ -59,29 +39,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-user w3-margin-right w3-xxlarge w3-text-teal"></i>About Astolfo</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Identity</b></h5>
-          <p>Rider's True Name is Astolfo (アストルフォ, Asutorufo?), one of the Twelve Paladins of Charlemagne (シャルルマーニュ十二勇士, Sharurumānyu Jūni Yūshi?). In the Charlemagne Legend, he is the son of an English king, and one of Charlemagne's twelve faithful Paladins. Among the Twelve Paladins of Charlemagne, Astolfo is said to be the most handsome, eternally optimistic, and completely lacking in sense. As the legends go, Astolfo was quite the ladies' man. As a cousin of Roland, Astolfo is included among those twelve-- that being said, Astolfo was famed as "weak" in legends.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Appearance</b></h5>
-          <p>Rider is an androgynous-looking boy who is fancily dressed. Beautiful beyond all compare, he states that his hair ornaments, which seem like something a princess would wear, are an "irresistible proof of friendship" that he uses to restore peace to his depressively mad boon ally, Roland. His appearance is contrary to the legend of being said to be the most handsome among the Twelve Peers of Charlemagne, and though extremely unexpected, it is natural for legends to become distorted. He purposefully dresses as a girl because he likes cute things. His gender in the servant status was written "le Secret♪".</p><hr>
-        </div>
-      </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Biography</h2>
-        <div class="w3-container">
-          <p>Astolfo has created many legends as he was an adventurer who flew to all over the world and even reached the Moon in the end. Through his journeys, he had won numerous Mystic Codes such as his flute, his grimoire, and his shining golden lance. Astolfo brought rise to various legends on the back of mounts like a griffin and the famous Rabicano, but particularly famous among them is something inconceivable for this world—the Hippogriff.
-
-Although many are the glorious tales of Astolfo, it is said that he has made just as many mistakes. He was continually defeated in riding tournaments, fell victim to many thaumaturgical traps and even lost—in a matter of hours—the reason that he had picked up at the moon. However, Astolfo never faltered; he did not seem to consider failure or defeat as blunders in the first place.</p>
-        </div>
-      </div>
+    <div id=detail class="w3-twothird">
 
     <!-- End Right Column -->
     </div>
@@ -96,7 +54,43 @@ Although many are the glorious tales of Astolfo, it is said that he has made jus
 <p>Edited by Lucca Huijgens</p>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
+function loadservant(){
+	    	$.getJSON("/servant/restservices/servants/94", function(servant){
+			 	document.title=servant.name;
+			 	$(".w3-display-container").append(
+			 			"<img src=imgs/"+servant.id+".png style=width:100% alt=Avatar>"+
+			 	          "<div class=\"w3-display-bottomleft w3-container w3-text-black\" style=color:black;>"+
+			 	            "<h2><span style=background-color:rgba(255,255,255,0.5);>"+servant.name+"</span></h2></div>"		
+			 	);
+			 	$("#about").append(
+			 	 "<p><i class=\"fas fa-user\" style=font-size:24px></i>&emsp; "+servant.title+"</p>"+
+		          "<p><i class=\"fa fa-home\" style=font-size:24px></i>&emsp;"+servant.region+"</p>"+
+		          "<p><i class=\"fas fa-male\" style=font-size:24px></i>&emsp;&emsp;"+servant.gender+"</p>"+
+		          "<p><i class=\"fas fa-user-md\" style=font-size:24px></i>&emsp; "+servant.servantclass+"</p><hr>"+
+		          "<p class=w3-large><b><i class=\"fas fa-shield-alt\" style=font-size:24px></i></i>&emsp;Stats</b></p>"+
+		          "Attack: &emsp;"+servant.attack+"<br>"+
+		          "Defense:&nbsp;    "+servant.defense+"<br>"+
+		          "<p class=w3-large w3-text-theme><b><i class=\"fa fa-heartbeat\" style=font-size:24px></i>&emsp;Medical Info</b></p>"+
+		          "<p><i class=\"fas fa-arrows-alt-v\" style=font-size:24px></i>&emsp;&emsp;"+servant.height+"</p>"+
+		          "<p><i class=\"fas fa-weight\" style=font-size:24px></i>&emsp; "+servant.weight+"</p><br>");
+			 	
+			 	$("#detail").append(
+			 			"<div id=idapcontainer class=\"w3-container w3-card w3-white w3-margin-bottom\">"+
+			 	        "<div class=w3-container>"+
+			 	    "<h2 class=w3-text-grey w3-padding-16><i class=\"fas fa-user w3-margin-right w3-xxlarge w3-text-teal\"></i>About "+servant.name+"</h2>"+
+			 	   "<div class=w3-container><h5 id=identity class=w3-opacity><b>Identity</b></h5>"+
+			 	   "<p>"+servant.description+"</p><hr></div>"+
+			 	  "<div class=w3-container><h5 id=appearance class=w3-opacity><b>Appearance</b></h5>"+
+			 	   "<p>"+servant.appearance+"</p><hr></div></div></div>"+
+	    		      "<div id =biography class=\"w3-container w3-card w3-white\">"+
+	    			 "<h2 class=\"w3-text-grey w3-padding-16\"><i class=\"fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal\"></i>Biography</h2>"+
+	    		        "<div id=biography class=w3-container>"+
+	    		        "<p>"+servant.biography+"</p></div></div></div>");
+			});
+	    }
+loadservant();
 </script>
 </body>
 </html>
