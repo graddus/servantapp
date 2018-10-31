@@ -5,21 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script src="javascript/index.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 </style>
-<body>
+<body class=w3-light-grey>
 
 <!-- Top menu -->
 <div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto;border:2px">
-    <div class="w3-center w3-padding-16">Servants</div>
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto;border:2px;color:white;background-color:#39576d;">
+    <div class="w3-center w3-padding-16" style=color:white;background-color:#39576d;>Servants</div>
   </div>
 </div>
   
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+<div class="w3-main w3-content w3-white w3-padding" style="max-width:1200px;margin-top:68px;">
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="servants1">
@@ -94,18 +95,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
-function loadservants(batch,row){
-	$.getJSON("/servant/restservices/servants?batch="+batch, function(data){
-		$.each(data, function(i, servant){
-			$("#servants"+row).append("<div class=w3-quarter>" +
-					"<a href="+servant.id+".html><img src=imgs/"+servant.id+".png alt=Sandwich style=width:100%></a>" +
-					" <h3>"+servant.name+"</h3>" +
-					" <p>"+servant.shortdesc+"</p></div>"
-);
-		});
-
-});
-} 
 loadservants(0,1);
 loadservants(4,2);
 </script>
