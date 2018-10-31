@@ -1,13 +1,23 @@
-function loadservants(){
-		$.getJSON("/servant/restservices/servants", function(data){
-			$.each(data, function(i, product){
-				$("#servants").append("<div class=w3-quarter>" +
-						"<img src=/w3images/sandwich.jpg alt=Sandwich style=width:100%>" +
-						" <h3>"+servant.name+"</h3>" +
-						" <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p></div>"
+function loadservants(batch,row){
+	$.getJSON("/servant/restservices/servants?batch="+batch, function(data){
+		$.each(data, function(i, servant){
+			$("#servants"+row).append("<div class=w3-quarter>" +
+					"<a href="+servant.id+".html><img src=imgs/"+servant.id+".png alt=Sandwich style=width:100%></a>" +
+					" <h3>"+servant.name+"</h3>" +
+					" <p>"+servant.shortdesc+"</p></div>"
 );
-			});
+		});
 
-	});
+});
 } 
-loadservants();
+
+var Lst;
+
+function CngClass(obj) {
+    elements = document.getElementsByClassName("active");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].className = 'w3-bar-item w3-button w3-hover-black';
+    }
+    obj.className = '"w3-bar-item w3-black w3-button"';
+    Lst = obj;
+}
