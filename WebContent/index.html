@@ -3,12 +3,50 @@
 <title>ServantApp</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="javascript/index.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
+/* styles for '...' */ 
+/* create the ... */
+.descriptiontext:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+/* hide ... if we have text, which is less than or equal to max lines */
+.descriptiontext:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  /* bg color = bg color under block */
+  background: white;
+}
+.inactive{
+background-color:white;
+color:black;
+}
+.active,inactive:hover{
+background-color:black;
+color:white;
+}
+active:hover{
+background-color:grey;
+}
 </style>
 <body class=w3-light-grey>
 
@@ -20,24 +58,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div>
   
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-white w3-padding" style="max-width:1200px;margin-top:68px;">
+<div id=pagecontainer class="w3-main w3-content w3-white w3-padding" style="max-width:1200px;margin-top:68px;">
 
   <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="servants1">
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="servants2">
+  <div class="w3-row-padding w3-padding-16 w3-center" id="servants">
   </div>
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-16">
     <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" id=button1 class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" id=button2 class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" id=button3 class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+      <button class="w3-bar-item w3-button w3-hover-black">«</button>
+      <button id=button1 class="w3-bar-item w3-button active">1</button>
+      <button id=button2 class="w3-bar-item w3-button inactive">2</button>
+      <button id=button3 class="w3-bar-item w3-button inactive">3</button>
+      <button class="w3-bar-item w3-button w3-hover-black">»</button>
     </div>
   </div>
   
@@ -93,30 +127,36 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 <!-- End page content -->
 </div>
-<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script>
-loadservants(0,1);
-loadservants(4,2);
+loadservants(0);
+loadservants(4);
+loadservants(8);
 </script>
 <script>
 $( "#button1" ).click(function() {
-	 $("#servants1").empty();
-	 $("#servants2").empty();
-	  loadservants(0,1);
-	  loadservants(4,2);
+	 $("#servants").empty();
+	  loadservants(0);
+	  loadservants(4);
+	  loadservants(8);
 	});
 $( "#button2" ).click(function() {
-	 $("#servants1").empty();
-	 $("#servants2").empty();
-	  loadservants(8,1);
-	  loadservants(12,2);
+	 $("#servants").empty();
+	  loadservants(12);
+	  loadservants(16);
+	  loadservants(20);
 	});
 $( "#button3" ).click(function() {
-	 $("#servants1").empty();
-	 $("#servants2").empty();
-	  loadservants(16,1);
-	  loadservants(20,2);
+	 $("#servants").empty();
+	  loadservants(24);
 	});
+$('.w3-button').click(function(){
+	console.log("look at my bank account");
+    $('.active').addClass("inactive");
+	   $('.active').removeClass("active");
+    $(this).removeClass("inactive");
+    $(this).addClass("active");
+    $('html, body').animate({scrollTop: '0px'}, 300);
+});
 </script>
 </body>
 </html>

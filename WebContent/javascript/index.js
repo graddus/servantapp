@@ -1,10 +1,10 @@
-function loadservants(batch,row){
+function loadservants(batch){
 	$.getJSON("/servant/restservices/servants?batch="+batch, function(data){
 		$.each(data, function(i, servant){
-			$("#servants"+row).append("<div class=w3-quarter>" +
+			$("#servants").append("<div style=margin:8px; class=\"w3-quarter w3-card w3-hover-shadow\">" +
 					"<a href="+servant.id+".html><img src=imgs/"+servant.id+".png alt=Sandwich style=width:100%></a>" +
 					" <h3>"+servant.name+"</h3>" +
-					" <p>"+servant.shortdesc+"</p></div>"
+					" <p class=descriptiontext>"+servant.shortdesc+"</p></div>"
 );
 		});
 
@@ -12,12 +12,3 @@ function loadservants(batch,row){
 } 
 
 var Lst;
-
-function CngClass(obj) {
-    elements = document.getElementsByClassName("active");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].className = 'w3-bar-item w3-button w3-hover-black';
-    }
-    obj.className = '"w3-bar-item w3-black w3-button"';
-    Lst = obj;
-}
