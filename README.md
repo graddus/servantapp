@@ -1,4 +1,4 @@
-# FGOServantLibrary
+# FGO ServantLibrary
 A simple web application that showcases the several Servants of the Fate/Grand Order universe. The app also contains detailed information on every Servant showcased.
 
 ## Tools
