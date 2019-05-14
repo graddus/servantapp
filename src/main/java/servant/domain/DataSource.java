@@ -1,9 +1,10 @@
 package servant.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataSource {
-private ArrayList<Servant> servants=new ArrayList<Servant>();
+private ArrayList<Servant> servants;
 
 public DataSource() {
 	Servant s1=new Servant(82, "Frankenstein", "Frankenstein's monster","Female","Berserker",9441, 10687, "Earth","The artificial life form created by Victor Frankenstein.\r\n" + 
@@ -209,7 +210,7 @@ public DataSource() {
 					"Although she was said to be the last Pharaoh of the Sixth Dynasty, there is no discovery of a positive proof that she clearly existed, even up to the present day, so she is also viewed as a “queen in legends”. However, the Greek historian Herodotus in the 5th Century BC wrote down her existence in the “Histories”, written as the world’s first history book.\r\n" + 
 					"\r\n" + 
 					"Beyond her gentle smile, Nitocris possesses absolute confidence as a Pharaoh. The “Was” sceptre wielded in her hand is a symbol of royal authority, while simultaneously, it is the same sceptre held by the ancient Egyptian gods; it is also a magical Mystic Code that possesses a powerful Mystery. The gods blessed her to have a strong will and pride. Gifted the power of the skies, and gifted the power of the underworld, she was bestowed enough power to conduct her revenge. Was it a section of the Nile River, as written down by Herodotus, that she really used to kill her bitter enemies that she invited to the basement, or was it a torrent of evil spirits overflowing from her bronze mirror of darkness, given to her by the gods, that killed them? After death, Nitocris did not proceed towards the “Eternal Paradise” that is in the afterlife of ancient Egypt. Consequently, she committed suicide without even making arrangements of her rebirth.",162,51,"Egypt");
-	servants=new ArrayList<Servant>();
+	servants=new ArrayList<>();
 	servants.add(s1);
 	servants.add(s2);
 	servants.add(s3);
@@ -238,7 +239,7 @@ public DataSource() {
 	servants.add(s26);
 }
 
-public ArrayList<Servant> getData(){
+public List<Servant> getData(){
 	return servants;
 }
 }

@@ -1,6 +1,7 @@
 package servant.rest;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.json.Json;
 import javax.json.JsonArray;
@@ -24,14 +25,14 @@ public class ServantRestService {
 
 		@GET
 		@Produces("application/json")
-		public String CountryList(@QueryParam("batch")int batch ) {
+		public String getServantList(@QueryParam("batch")int batch ) {
 			JsonArrayBuilder jab = Json.createArrayBuilder();
-			ArrayList<Servant>servantlist=service.getAllServants();
+			List<Servant>servantlist=service.getAllServants();
 			int batchend=batch+4;
 			if (batchend>servantlist.size()) {
 				batchend=servantlist.size();
 			}if (batch<=servantlist.size()) {
-			ArrayList<Servant> result = new ArrayList<Servant>(servantlist.subList(batch,batchend ));
+			ArrayList<Servant> result = new ArrayList<>(servantlist.subList(batch,batchend ));
 			for (Servant s : result) {
 				jab.add(createJson(s));
 			}

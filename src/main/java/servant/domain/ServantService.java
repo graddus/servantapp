@@ -1,9 +1,6 @@
 package servant.domain;
 
-import java.util.ArrayList;
-
-import servant.persistence.ServantDao;
-/*import servant.persistence.ServantDaoImpl;*/
+import java.util.List;
 
 public class ServantService {
 	private DataSource data;
@@ -12,7 +9,7 @@ public class ServantService {
 		data = new DataSource();
 	}
 
-	public ArrayList<Servant> getAllServants() {
+	public List<Servant> getAllServants() {
 		return data.getData();
 	}
 

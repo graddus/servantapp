@@ -24,7 +24,6 @@ public class BaseDao {
         try {
 			con = DriverManager.getConnection(connectionURL, username, password);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         return con;
